@@ -1,0 +1,38 @@
+classDiagram
+    direction LR
+    class Iphone {
+        +exibirPagina(url: String)
+        +adicionarNovaAba()
+        +atualizarPagina()
+        +ligar(numero: String)
+        +atender()
+        +iniciarCorreioVoz()
+        +tocar()
+        +pausar()
+        +selecionarMusica(musica: String)
+    }
+
+    interface ReprodutorMusical {
+        <<interface>>
+        tocar()
+        pausar()
+        selecionarMusica(musica: String)
+    }
+
+    interface AparelhoTelefonico {
+        <<interface>>
+        ligar(numero: String)
+        atender()
+        iniciarCorreioVoz()
+    }
+
+    interface NavegadorInternet {
+        <<interface>>
+        exibirPagina(url: String)
+        adicionarNovaAba()
+        atualizarPagina()
+    }
+
+    Iphone ..|> ReprodutorMusical
+    Iphone ..|> AparelhoTelefonico
+    Iphone ..|> NavegadorInternet
